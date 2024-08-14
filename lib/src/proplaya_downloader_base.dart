@@ -1,6 +1,17 @@
-// TODO: Put public facing types in this file.
+import 'package:continuous_background_worker/continuous_background_worker.dart';
+import 'package:proplaya_storage_management/proplaya_storage_management.dart';
 
-/// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
+/// Downloads serializable items.
+class ProplayaDownloader with ContinuousBackgroundWorker<Serializable> {
+  /// **Must** be called in order to start the background worker.
+  Future<void> init() => initializeService();
+
+  // This is the method that will be called by the app.
+  void download(Serializable serializable) {
+    addToQueue_(serializable);
+  }
+
+  // Handles each serializable item.
+  @override
+  Future<void> handleItem_(item) => ProplayaStorageManagement().download(item);
 }

@@ -9,7 +9,13 @@ environment:
 # Add regular dependencies here.
 dependencies:
   # path: ^1.8.0
+  rxdart: ^0.28.0
+  async: ^2.11.0
+  continuous_background_worker:
+    path: ../continuous_background_worker
+  proplaya_storage_management:
+    path: ../proplaya_storage_management
 
 dev_dependencies:
-  lints: ^3.0.0
+  lints: ^4.0.0
   test: ^1.24.0
