@@ -15,6 +15,7 @@ dependencies:
     path: ../continuous_background_worker
   proplaya_storage_management:
     path: ../proplaya_storage_management
+  get_it: ^7.7.0
 
 dev_dependencies:
   lints: ^4.0.0
